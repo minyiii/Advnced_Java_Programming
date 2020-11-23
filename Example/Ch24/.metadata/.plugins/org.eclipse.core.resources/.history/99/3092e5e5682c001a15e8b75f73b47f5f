@@ -1,0 +1,23 @@
+import javax.swing.JFrame;
+
+public class DisplayQueryResults extends JFrame {
+	
+	private static final String DATABASE_URL = "jdbc:mysql://localhost/books?serverTimezone=UTC";
+	private static final String USERNAME = "java";
+	private static final String PASSWORD = "java";
+	
+	private static final String DEFAULT_QUERY = "SELECT * FROM Authors";
+	
+	private static ResultSetTableModel tableModel;
+	
+	public static void main(String[] args) {
+		try {
+			tablemModel = new ResultSetTableModel(DATABASE_URL, USERNAME, PASSWORD, DEFAULT_QUERY);
+			
+		}
+		catch() {
+			
+		}
+	}
+
+}

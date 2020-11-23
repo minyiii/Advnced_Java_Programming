@@ -1,0 +1,28 @@
+import java.util.Arrays;
+import java.util.LinkedList;
+
+
+public class UsingToArray {
+
+	public static void main(String[] args) {
+		String[] colors = {"black", "blue", "yellow"};
+		//把array看成list來處理，再copy出新的linked list
+		LinkedList<String> links = new LinkedList<String>(Arrays.asList(colors));
+		
+		links.addLast("red");
+		links.add("pink");
+		links.add(3, "green");
+		links.addFirst("cyan");
+		
+		System.out.print("before: ");
+		for(String c:colors)
+			System.out.printf("%s ",c);
+		
+		colors = links.toArray(new String[links.size()]);
+		
+		System.out.println("colors:");
+		
+		for(String color:colors)
+			System.out.println(color);
+	}
+}

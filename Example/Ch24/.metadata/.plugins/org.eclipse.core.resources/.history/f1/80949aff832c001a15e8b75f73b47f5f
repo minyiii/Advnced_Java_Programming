@@ -1,0 +1,64 @@
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import java.util.List; 
+import javax.swing.JButton;
+import javax.swing.Box;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.WindowConstants;
+import javax.swing.BoxLayout;
+import javax.swing.BorderFactory;
+import javax.swing.JOptionPane;
+
+public class AddressBookDisplay extends JFrame{
+	private Person currentEntry;
+	   private PersonQueries personQueries;
+	   private List<Person> results;   
+	   private int numberOfEntries = 0;
+	   private int currentEntryIndex;
+
+	   private JButton browseButton;
+	   private JLabel emailLabel;
+	   private JTextField emailTextField;
+	   private JLabel firstNameLabel;
+	   private JTextField firstNameTextField;
+	   private JLabel idLabel;
+	   private JTextField idTextField;
+	   private JTextField indexTextField;
+	   private JLabel lastNameLabel;
+	   private JTextField lastNameTextField;
+	   private JTextField maxTextField;
+	   private JButton nextButton;
+	   private JLabel ofLabel;
+	   private JLabel phoneLabel;
+	   private JTextField phoneTextField;
+	   private JButton previousButton;
+	   private JButton queryButton;
+	   private JLabel queryLabel;
+	   private JPanel queryPanel;
+	   private JPanel navigatePanel;
+	   private JPanel displayPanel;
+	   private JTextField queryTextField;
+	   private JButton insertButton;
+	
+	
+	//constructor
+	public AddressBookDisplay() {
+		super("Address Book");
+		personQueries = new PersonQueries();
+		
+		
+		
+	}
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

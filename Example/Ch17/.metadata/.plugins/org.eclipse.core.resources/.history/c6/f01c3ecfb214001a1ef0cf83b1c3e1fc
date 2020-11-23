@@ -1,0 +1,12 @@
+import java.util.Arrays;
+
+public class ArraysAndAtreams2 {
+	
+	public static void main(String[] args) {
+		String[] strings = {"Red", "Orange", "Yellow", "green", "Blue", "indigo", "Violet"};
+		
+		System.out.printf("Original strings: %s\n", Arrays.asList(strings));
+		
+		
+	}
+}

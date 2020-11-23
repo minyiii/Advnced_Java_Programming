@@ -1,0 +1,84 @@
+import java.sql.Connection;
+import java.sql.Statement;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import javax.swing.table.AbstractTableModel;
+
+public class ResultSetTableModel extends AbstractTableModel{
+	private final Connection connection;
+	private final Statement statement;
+	private ResultSet resultSet;
+	private ResultSetMetaData metaData;
+	private int numberOfRows;
+	
+	private boolean connectedToDatabase = false;
+	
+	//constructor
+	public ResultSetTableModel(String url, String userName, String password, String query)
+		throws SQLException{
+		connection = DriverManager.getConnection(url, userName, password);
+		statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+		
+		connectedToDatabase = true;
+		setQuery(query);
+	}
+	
+	public Class getColumnsClass(int column) throws IllegalStateException {
+		if(!connectedToDatabase) {
+			throw new IllegalStateException("Not connected to Database");
+		}
+		
+		try {
+			String className = metaData.getColumnClassName(column+1);
+			return Class.forName(className);
+		}
+		catch(Exception exception) {
+			exception.printStackTrace();
+		}
+		return Object.class;
+	}
+	
+	public int getColumnCount() throws IllegalStateException{
+		if(!connectedToDatabase) {
+			throw new IllegalStateException("No connected to Database");
+		}
+		try {
+			return metaData.getColumnCount();
+		}
+		catch(SQLException sqlException) {
+			sqlException.printStackTrace();
+		}
+		return 0;
+	}
+	
+	public String getColumnName(int column) throws IllegalStateException{
+		if(!connectedToDatabase) {
+			throw new IllegalStateException("No connected to Database");
+		}
+		try {
+			return metaData.getColumnName(column+1);
+		}
+		catch() {
+			
+		}
+	}
+	
+	//
+	public void setQuery(String query) 
+			throws SQLException, IllegalStateException
+	{
+		if(!connectedToDatabase) {
+			throw new IllegalStateException("No Connected to Database");
+		}
+		resultSet = statement.executeQuery(query);
+		metaData = resultSet.getMetaData();
+		
+		resultSet.last();	//移到最後一row
+		numberOfRows = resultSet.getRow();
+		
+		fireTableStructureChanged();
+	}
+		
+}

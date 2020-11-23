@@ -1,0 +1,46 @@
+
+public class Employee {
+	private String firstName;
+	private String lastName;
+	private double salary;
+	private String department;
+	
+	public Employee(String firstName, String lastName, double salary, String department) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.salary = salary;
+		this.department = department;
+	}
+	
+	public void setFirstName(String fistName) {
+		this.firstName = firstName;
+	}
+	
+	public String getFiestName() {
+		return firstName;
+	}
+	
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	
+	public String getLastName() {
+		return lastName;
+	}
+	
+	public void setSalary(double salary) {
+		this.salary = salary;
+	}
+	
+	public double getSalary() {
+		return salary;
+	}
+	
+	public void setDepartment(String dapartment) {
+		this.department = department;
+	}
+	
+	public String getDepartment() {
+		return department;
+	}
+}

@@ -1,0 +1,19 @@
+import java.awt.Image;
+
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+
+public class MapFrame {
+	
+	public MapFrame() {	//constructor
+		
+	}
+	
+	
+	public Icon changeSize(String str){	//更改圖片大小
+		ImageIcon imgIcon = new ImageIcon(getClass().getResource(str));
+		Image img = imgIcon.getImage().getScaledInstance(40, 40, java.awt.Image.SCALE_SMOOTH);
+		Icon icon = new ImageIcon(img);
+		return icon;
+	}
+}

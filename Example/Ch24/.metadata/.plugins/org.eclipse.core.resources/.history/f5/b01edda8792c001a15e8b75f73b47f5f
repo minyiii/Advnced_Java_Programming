@@ -1,0 +1,8 @@
+
+public class PersonQueries {
+	private static final String URL = "jdbc:mysql://localhost/addressbook?serverTimezone=UTC";
+	private static final String USERNAME = "java";
+	private static final String PASSWORD = "java";
+	
+	
+}

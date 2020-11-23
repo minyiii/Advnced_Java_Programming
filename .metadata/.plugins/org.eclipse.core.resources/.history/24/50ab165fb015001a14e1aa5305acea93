@@ -1,0 +1,60 @@
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.Image;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
+public class MapFrame extends JFrame{
+	List list = new ArrayList<>();		//存檔案讀進來的0,1,2
+	private JPanel bloodJPanel;			//血量圖區
+	private JPanel mapJPanel;			//地圖區
+	private static int bloodValue=100;	//血量
+	private JLabel brickLabel;
+	private JLabel heartLabel;
+	private JLabel diamondLabel;
+	private JLabel roadLabel;
+	
+	public MapFrame() {	//constructor
+		super("電流急急棒");
+		setLayout(new BorderLayout());
+		
+		// 血量圖JPanel //
+		bloodJPanel = new BloodPanel();
+		bloodJPanel.setPreferredSize(new Dimension(550, 50));
+		add(bloodJPanel, BorderLayout.NORTH);
+		
+		// 匯入map.txt檔，得一個List //
+		list = ReadMapFile.readFromFile();
+		
+		// 圖片 //
+		Icon brick = changeSize("brickwall.png");
+		Icon heart = changeSize("heart.png");
+		Icon diamond = changeSize("diamond.png");
+		
+		diamondLabel = new JLabel(diamond);
+		diamondLabel.addMouseListener(new MouseAdapter(){
+			@Override
+			public void mouseEntered(MouseEvent event){
+				JOptionPane.showMessageDialog(null, "成功拿到鑽石", "恭喜", JOptionPane.PLAIN_MESSAGE);
+				dispose();
+			}
+		});
+	}
+	
+	
+	public Icon changeSize(String str){	//更改圖片大小
+		ImageIcon imgIcon = new ImageIcon(getClass().getResource(str));
+		Image img = imgIcon.getImage().getScaledInstance(40, 40, java.awt.Image.SCALE_SMOOTH);
+		Icon icon = new ImageIcon(img);
+		return icon;
+	}
+}

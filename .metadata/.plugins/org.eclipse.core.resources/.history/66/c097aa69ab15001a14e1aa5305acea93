@@ -1,0 +1,29 @@
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.regex.Pattern;
+
+
+public class ReadMapFile {
+	
+	public static void readFromFile() throws IOException {
+		Pattern pattern = Pattern.compile("\\s+");
+		
+		int[] elements = Files.lines(Paths.get("map.txt"))
+				.flatMap(line->pattern.splitAsStream(line))
+				.map(object->Integer.parseInt(object))
+				.collect(null);
+		System.out.print(elements);
+	}
+	
+	private void ConvertToPic(int i) {
+		switch(i) {
+		case 0:
+			break;
+		case 1:
+			break;
+		case 2:
+			break;
+		}
+	}
+}

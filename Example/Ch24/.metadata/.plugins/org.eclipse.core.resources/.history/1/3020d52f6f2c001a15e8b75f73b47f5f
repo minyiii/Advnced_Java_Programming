@@ -1,0 +1,11 @@
+
+public class JdbcRowSetTest {
+
+	private static final String DATABASE_URL = "jdbc:mysql://localhost/books?serverTimezone=UTC";
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

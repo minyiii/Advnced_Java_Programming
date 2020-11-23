@@ -1,0 +1,25 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+
+public class PersonQueries {
+	private static final String URL = "jdbc:mysql://localhost/addressbook?serverTimezone=UTC";
+	private static final String USERNAME = "java";
+	private static final String PASSWORD = "java";
+	
+	private Connection connection;
+	private PreparedStatement selectAllPeople;
+	private PreparedStatement selectPeopleByLastName;
+	private PreparedStatement insertNewPerson;
+	
+	//constructor
+	public PersonQueries() {
+		try {
+			connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+			
+		}
+		catch() {
+			
+		}
+	}
+}

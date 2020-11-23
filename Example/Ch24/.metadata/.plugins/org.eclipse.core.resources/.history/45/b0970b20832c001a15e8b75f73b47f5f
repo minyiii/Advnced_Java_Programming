@@ -1,0 +1,21 @@
+import javax.swing.JFrame;
+
+public class AddressBookDisplay extends JFrame{
+	private Person currentEntry;
+	private PersonQueries personQueries;
+	
+	
+	//constructor
+	public AddressBookDisplay() {
+		super("Address Book");
+		personQueries = new PersonQueries();
+		
+		
+		
+	}
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

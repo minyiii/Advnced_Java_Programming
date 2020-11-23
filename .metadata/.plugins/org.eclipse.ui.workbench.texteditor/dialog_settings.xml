@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="atBottom()" key="selection"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="false" key="wholeword"/>
+		<list key="findhistory">
+			<item value="atBottom()"/>
+			<item value="checkCookie"/>
+			<item value="fishing()"/>
+			<item value="beEaten"/>
+			<item value="300"/>
+			<item value="allDataDisplay"/>
+			<item value="JTable"/>
+			<item value="TurtleListener"/>
+			<item value="MazeTest"/>
+			<item value="grade"/>
+		</list>
+		<list key="replacehistory">
+			<item value="BtnListener"/>
+			<item value="score"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="401" key="DIALOG_WIDTH"/>
+		<item value="1|Microsoft JhengHei UI|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft JhengHei UI" key="DIALOG_FONT_NAME"/>
+		<item value="499" key="DIALOG_HEIGHT"/>
+		<item value="1403" key="DIALOG_X_ORIGIN"/>
+		<item value="194" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

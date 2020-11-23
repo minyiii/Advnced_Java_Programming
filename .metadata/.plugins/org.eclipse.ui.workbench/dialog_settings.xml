@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="WorkbenchPreferenceDialogSettings">
+		<item value="540" key="DIALOG_X_ORIGIN"/>
+		<item value="11" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="org.eclipse.ui.preferences.keysPreferencePage">
+		<item value="true" key="actionSetFilter"/>
+		<item value="true" key="uncategorizedFilter"/>
+		<item value="true" key="internalFilter"/>
+	</section>
+	<section name="org.eclipse.ui.internal.QuickAccess">
+		<item value="-1" key="dialogHeight"/>
+		<item value="-1" key="dialogWidth"/>
+		<list key="textEntries">
+		</list>
+		<list key="orderedElements">
+		</list>
+		<list key="orderedProviders">
+		</list>
+		<list key="textArray">
+		</list>
+	</section>
+	<section name="NewWizardAction">
+	</section>
+	<section name="ImportExportAction">
+		<item value="org.eclipse.ui.wizards.export.ZipFile" key="ImportExportPage.STORE_SELECTED_EXPORT_WIZARD_ID"/>
+		<list key="ImportExportPage.STORE_EXPANDED_EXPORT_CATEGORIES">
+			<item value="org.eclipse.ui.Basic"/>
+			<item value="org.eclipse.jdt.ui.Java"/>
+		</list>
+	</section>
+	<section name="ZipFileExportWizard">
+		<item value="true" key="WizardZipFileResourceExportPage1.STORE_COMPRESS_CONTENTS_ID"/>
+		<item value="true" key="WizardZipFileResourceExportPage1.STORE_CREATE_STRUCTURE_ID"/>
+		<list key="WizardZipFileResourceExportPage1.STORE_DESTINATION_NAMES_ID">
+			<item value="C:\Users\蘇敏宜\Documents\personal\大三\進Ja\HW\finalQ2_106403034_蘇敏宜.zip"/>
+			<item value="C:\Users\蘇敏宜\Documents\personal\大三\進Ja\HW\finalQ1_106403034_蘇敏宜.zip"/>
+			<item value="C:\Users\蘇敏宜\Documents\personal\大三\進Ja\HW\HW7_106403034_蘇敏宜.zip"/>
+			<item value="C:\Users\蘇敏宜\Documents\personal\大三\進Ja\HW\HW6_106403034_蘇敏宜.zip"/>
+			<item value="C:\Users\蘇敏宜\Documents\personal\大三\進Ja\HW\HW5_106403034_蘇敏宜.zip"/>
+			<item value="C:\Users\蘇敏宜\Desktop\MidQ3_106403034_蘇敏宜.zip"/>
+			<item value="C:\Users\蘇敏宜\Desktop\MidQ2_106403034_蘇敏宜.zip"/>
+			<item value="C:\Users\蘇敏宜\Desktop\MidQ1_106403034_蘇敏宜.zip"/>
+		</list>
+	</section>
+</section>

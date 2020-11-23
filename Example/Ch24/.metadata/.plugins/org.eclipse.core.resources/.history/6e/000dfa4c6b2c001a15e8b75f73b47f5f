@@ -1,0 +1,67 @@
+import java.awt.BorderLayout;
+import java.sql.SQLException;
+
+import javax.swing.Box;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.ScrollPaneConstants;
+
+public class DisplayQueryResults extends JFrame {
+	
+	private static final String DATABASE_URL = "jdbc:mysql://localhost/books?serverTimezone=UTC";
+	private static final String USERNAME = "java";
+	private static final String PASSWORD = "java";
+	
+	private static final String DEFAULT_QUERY = "SELECT * FROM Authors";
+	
+	private static ResultSetTableModel tableModel;
+	
+	public static void main(String[] args) {
+		try {
+			tableModel = new ResultSetTableModel(DATABASE_URL, USERNAME, PASSWORD, DEFAULT_QUERY);
+			
+			final JTextArea queryArea = new JTextArea(DEFAULT_QUERY, 3, 100);
+			queryArea.setWrapStyleWord(true);
+			queryArea.setLineWrap(true);
+			
+			JScrollPane scrollPane = new JScrollPane(queryArea,
+					ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED,
+					ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+			
+			JButton submitBtn = new JButton("Submit Query");
+			
+			Box boxNorth = Box.createHorizontalBox();
+			boxNorth.add(scrollPane);
+			boxNorth.add(submitBtn);
+			
+			JTable resultTable = new JTable(tableModel);
+			JLabel filterLabel = new JLabel("Filter:");
+			final JTextField filterText = new JTextField();
+			JButton filterBtn = new JButton("Apply Filter");
+			
+			Box boxSouth = Box.createHorizontalBox();
+			boxSouth.add(filterLabel);
+			boxSouth.add(filterText);
+			boxSouth.add(filterBtn);
+			
+			JFrame window = new JFrame("Displaying Query Results");
+			add(boxNorth, BorderLayout.NORTH);
+			add(new JScrollPane(resultTable), BorderLayout.CENTER);
+			add(boxSouth, BorderLayout.SOUTH);
+			
+		}
+		catch(SQLException sqlException) {
+			JOptionPane.showInternalMessageDialog(null, sqlException.getMessage(),
+					"Database error", JOptionPane.ERROR_MESSAGE);
+			tableModel.disconnectFromDatabase();
+			System.exit(1);
+		}
+	}
+
+}
